@@ -88,6 +88,11 @@ public class IniciarSesion extends javax.swing.JFrame {
         btnIngresar.setMaximumSize(new java.awt.Dimension(100, 50));
         btnIngresar.setMinimumSize(new java.awt.Dimension(100, 50));
         btnIngresar.setPreferredSize(new java.awt.Dimension(100, 50));
+        btnIngresar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnIngresarMouseClicked(evt);
+            }
+        });
 
         jLabel5.setBackground(new java.awt.Color(255, 255, 255));
         jLabel5.setFont(new java.awt.Font("Microsoft PhagsPa", 0, 18)); // NOI18N
@@ -159,7 +164,6 @@ public class IniciarSesion extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void lblOlvidasteContrasenaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblOlvidasteContrasenaMouseEntered
-        // TODO add your handling code here:
         Font font = lblOlvidasteContrasena.getFont();
         Map attributes = font.getAttributes();
         attributes.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON);
@@ -167,12 +171,16 @@ public class IniciarSesion extends javax.swing.JFrame {
     }//GEN-LAST:event_lblOlvidasteContrasenaMouseEntered
 
     private void lblOlvidasteContrasenaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblOlvidasteContrasenaMouseExited
-        // TODO add your handling code here:
         Font font = lblOlvidasteContrasena.getFont();
         Map attributes = font.getAttributes();
         attributes.put(TextAttribute.UNDERLINE, -1);
         lblOlvidasteContrasena.setFont(font.deriveFont(attributes));
     }//GEN-LAST:event_lblOlvidasteContrasenaMouseExited
+
+    private void btnIngresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnIngresarMouseClicked
+        this.dispose();
+        new PantallaPrincipal().setVisible(true);
+    }//GEN-LAST:event_btnIngresarMouseClicked
 
     /**
      * @param args the command line arguments
