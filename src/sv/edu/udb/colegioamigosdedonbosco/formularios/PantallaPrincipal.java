@@ -92,6 +92,12 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tblCategorias1 = new javax.swing.JTable();
+        btnRolLimpiar = new javax.swing.JButton();
+        btnRolEliminar = new javax.swing.JButton();
+        btnRolModificar = new javax.swing.JButton();
+        btnRolGuardar = new javax.swing.JButton();
         pnlUsuarios = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         pnlCategorias = new javax.swing.JPanel();
@@ -474,6 +480,88 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         });
         pnlRoles.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 60, -1, -1));
 
+        tblCategorias1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        tblCategorias1.getTableHeader().setResizingAllowed(false);
+        tblCategorias1.getTableHeader().setReorderingAllowed(false);
+        tblCategorias1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblCategorias1MouseClicked(evt);
+            }
+        });
+        jScrollPane2.setViewportView(tblCategorias1);
+
+        pnlRoles.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 820, 270));
+
+        btnRolLimpiar.setBackground(new java.awt.Color(59, 130, 246));
+        btnRolLimpiar.setFont(new java.awt.Font("Microsoft PhagsPa", 1, 14)); // NOI18N
+        btnRolLimpiar.setForeground(new java.awt.Color(255, 255, 255));
+        btnRolLimpiar.setText("LIMPIAR");
+        btnRolLimpiar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnRolLimpiar.setMaximumSize(new java.awt.Dimension(100, 50));
+        btnRolLimpiar.setMinimumSize(new java.awt.Dimension(100, 50));
+        btnRolLimpiar.setPreferredSize(new java.awt.Dimension(120, 35));
+        btnRolLimpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRolLimpiarActionPerformed(evt);
+            }
+        });
+        pnlRoles.add(btnRolLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 260, -1, -1));
+
+        btnRolEliminar.setBackground(new java.awt.Color(220, 38, 38));
+        btnRolEliminar.setFont(new java.awt.Font("Microsoft PhagsPa", 1, 14)); // NOI18N
+        btnRolEliminar.setForeground(new java.awt.Color(255, 255, 255));
+        btnRolEliminar.setText("ELIMINAR");
+        btnRolEliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnRolEliminar.setMaximumSize(new java.awt.Dimension(100, 50));
+        btnRolEliminar.setMinimumSize(new java.awt.Dimension(100, 50));
+        btnRolEliminar.setPreferredSize(new java.awt.Dimension(120, 35));
+        btnRolEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRolEliminarActionPerformed(evt);
+            }
+        });
+        pnlRoles.add(btnRolEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 260, -1, -1));
+
+        btnRolModificar.setBackground(new java.awt.Color(217, 119, 6));
+        btnRolModificar.setFont(new java.awt.Font("Microsoft PhagsPa", 1, 14)); // NOI18N
+        btnRolModificar.setForeground(new java.awt.Color(255, 255, 255));
+        btnRolModificar.setText("MODIFICAR");
+        btnRolModificar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnRolModificar.setMaximumSize(new java.awt.Dimension(100, 50));
+        btnRolModificar.setMinimumSize(new java.awt.Dimension(100, 50));
+        btnRolModificar.setPreferredSize(new java.awt.Dimension(120, 35));
+        btnRolModificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRolModificarActionPerformed(evt);
+            }
+        });
+        pnlRoles.add(btnRolModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 260, -1, -1));
+
+        btnRolGuardar.setBackground(new java.awt.Color(68, 117, 245));
+        btnRolGuardar.setFont(new java.awt.Font("Microsoft PhagsPa", 1, 14)); // NOI18N
+        btnRolGuardar.setForeground(new java.awt.Color(255, 255, 255));
+        btnRolGuardar.setText("GUARDAR");
+        btnRolGuardar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnRolGuardar.setMaximumSize(new java.awt.Dimension(100, 50));
+        btnRolGuardar.setMinimumSize(new java.awt.Dimension(100, 50));
+        btnRolGuardar.setPreferredSize(new java.awt.Dimension(120, 35));
+        btnRolGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRolGuardarActionPerformed(evt);
+            }
+        });
+        pnlRoles.add(btnRolGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 260, -1, -1));
+
         getContentPane().add(pnlRoles, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 0, 880, 600));
 
         pnlUsuarios.setBackground(new java.awt.Color(255, 255, 255));
@@ -747,7 +835,14 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAutorEliminarActionPerformed
 
     private void btnAutorGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAutorGuardarActionPerformed
-        // TODO add your handling code here:
+        AutoresCRUD autor = new AutoresCRUD();
+        if (autor.insert(txtCategoriaDescripcion.getText()) == 1) {
+            JOptionPane.showMessageDialog(null, "Autor creado correctamente", "Correcto", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(null, "Error al crear Autor", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+        this.limpiarCategoriaCampos();
+        tblCategorias.setModel(autor.select());
     }//GEN-LAST:event_btnAutorGuardarActionPerformed
 
     private void btnAutorModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAutorModificarActionPerformed
@@ -761,6 +856,26 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox1ActionPerformed
+
+    private void tblCategorias1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblCategorias1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tblCategorias1MouseClicked
+
+    private void btnRolLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRolLimpiarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnRolLimpiarActionPerformed
+
+    private void btnRolEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRolEliminarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnRolEliminarActionPerformed
+
+    private void btnRolModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRolModificarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnRolModificarActionPerformed
+
+    private void btnRolGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRolGuardarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnRolGuardarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -813,6 +928,10 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btnConfiguracionModificar;
     private javax.swing.JButton btnEjemplares;
     private javax.swing.JButton btnPrestamos;
+    private javax.swing.JButton btnRolEliminar;
+    private javax.swing.JButton btnRolGuardar;
+    private javax.swing.JButton btnRolLimpiar;
+    private javax.swing.JButton btnRolModificar;
     private javax.swing.JButton btnRoles;
     private javax.swing.JButton btnUsuarios;
     private javax.swing.JComboBox<String> jComboBox1;
@@ -838,6 +957,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPanel1;
     private javax.swing.JPanel pnlAutores;
     private javax.swing.JPanel pnlBienvenida;
@@ -849,6 +969,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel pnlUsuarios;
     private javax.swing.JTable tblAutor;
     private javax.swing.JTable tblCategorias;
+    private javax.swing.JTable tblCategorias1;
     private javax.swing.JTextField txtApellidos;
     private javax.swing.JTextField txtAutores;
     private javax.swing.JTextField txtCategoriaCodigo;
