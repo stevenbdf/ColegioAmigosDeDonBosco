@@ -9,6 +9,7 @@ import java.awt.Color;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import sv.edu.udb.colegioamigosdedonbosco.basededatos.CategoriasCRUD;
+import sv.edu.udb.colegioamigosdedonbosco.basededatos.ConfiguracionCRUD;
 
 public class PantallaPrincipal extends javax.swing.JFrame {
 
@@ -68,6 +69,13 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         pnlConfiguracion = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
+        txtConfiguracionAlumnos = new javax.swing.JTextField();
+        jLabel15 = new javax.swing.JLabel();
+        txtConfiguracionProfesores = new javax.swing.JTextField();
+        jLabel16 = new javax.swing.JLabel();
+        txtConfiguracionMora = new javax.swing.JTextField();
+        jLabel17 = new javax.swing.JLabel();
+        btnConfiguracionModificar = new javax.swing.JButton();
         pnlRoles = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         pnlUsuarios = new javax.swing.JPanel();
@@ -80,7 +88,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         btnCategoriaEliminar = new javax.swing.JButton();
         btnCategoriaGuardar = new javax.swing.JButton();
-        btnCategoriaModificar1 = new javax.swing.JButton();
+        btnCategoriaModificar = new javax.swing.JButton();
         btnCategoriaLimpiar = new javax.swing.JButton();
         txtCategoriaCodigo = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
@@ -274,11 +282,55 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         pnlConfiguracion.setMaximumSize(new java.awt.Dimension(880, 600));
         pnlConfiguracion.setMinimumSize(new java.awt.Dimension(880, 600));
         pnlConfiguracion.setPreferredSize(new java.awt.Dimension(880, 600));
+        pnlConfiguracion.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentShown(java.awt.event.ComponentEvent evt) {
+                pnlConfiguracionComponentShown(evt);
+            }
+        });
         pnlConfiguracion.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel5.setFont(new java.awt.Font("Microsoft PhagsPa", 1, 18)); // NOI18N
         jLabel5.setText("Configuración");
         pnlConfiguracion.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
+
+        txtConfiguracionAlumnos.setFont(new java.awt.Font("Microsoft PhagsPa", 0, 14)); // NOI18N
+        txtConfiguracionAlumnos.setPreferredSize(new java.awt.Dimension(300, 35));
+        pnlConfiguracion.add(txtConfiguracionAlumnos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 370, -1));
+
+        jLabel15.setFont(new java.awt.Font("Microsoft PhagsPa", 0, 14)); // NOI18N
+        jLabel15.setText("# de ejemplares a prestar a alumnos");
+        pnlConfiguracion.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, -1, -1));
+
+        txtConfiguracionProfesores.setFont(new java.awt.Font("Microsoft PhagsPa", 0, 14)); // NOI18N
+        txtConfiguracionProfesores.setPreferredSize(new java.awt.Dimension(300, 35));
+        pnlConfiguracion.add(txtConfiguracionProfesores, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 90, 370, -1));
+
+        jLabel16.setFont(new java.awt.Font("Microsoft PhagsPa", 0, 14)); // NOI18N
+        jLabel16.setText("# de ejemplares a prestar a profesores");
+        pnlConfiguracion.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 60, -1, -1));
+
+        txtConfiguracionMora.setFont(new java.awt.Font("Microsoft PhagsPa", 0, 14)); // NOI18N
+        txtConfiguracionMora.setPreferredSize(new java.awt.Dimension(300, 35));
+        pnlConfiguracion.add(txtConfiguracionMora, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, -1, -1));
+
+        jLabel17.setFont(new java.awt.Font("Microsoft PhagsPa", 0, 14)); // NOI18N
+        jLabel17.setText("Porcentaje de mora anual");
+        pnlConfiguracion.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, -1, -1));
+
+        btnConfiguracionModificar.setBackground(new java.awt.Color(217, 119, 6));
+        btnConfiguracionModificar.setFont(new java.awt.Font("Microsoft PhagsPa", 1, 14)); // NOI18N
+        btnConfiguracionModificar.setForeground(new java.awt.Color(255, 255, 255));
+        btnConfiguracionModificar.setText("MODIFICAR");
+        btnConfiguracionModificar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnConfiguracionModificar.setMaximumSize(new java.awt.Dimension(100, 50));
+        btnConfiguracionModificar.setMinimumSize(new java.awt.Dimension(100, 50));
+        btnConfiguracionModificar.setPreferredSize(new java.awt.Dimension(120, 35));
+        btnConfiguracionModificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConfiguracionModificarActionPerformed(evt);
+            }
+        });
+        pnlConfiguracion.add(btnConfiguracionModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 260, -1, -1));
 
         getContentPane().add(pnlConfiguracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 0, 880, 600));
 
@@ -384,20 +436,20 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         });
         pnlCategorias.add(btnCategoriaGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 260, -1, -1));
 
-        btnCategoriaModificar1.setBackground(new java.awt.Color(217, 119, 6));
-        btnCategoriaModificar1.setFont(new java.awt.Font("Microsoft PhagsPa", 1, 14)); // NOI18N
-        btnCategoriaModificar1.setForeground(new java.awt.Color(255, 255, 255));
-        btnCategoriaModificar1.setText("MODIFICAR");
-        btnCategoriaModificar1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnCategoriaModificar1.setMaximumSize(new java.awt.Dimension(100, 50));
-        btnCategoriaModificar1.setMinimumSize(new java.awt.Dimension(100, 50));
-        btnCategoriaModificar1.setPreferredSize(new java.awt.Dimension(120, 35));
-        btnCategoriaModificar1.addActionListener(new java.awt.event.ActionListener() {
+        btnCategoriaModificar.setBackground(new java.awt.Color(217, 119, 6));
+        btnCategoriaModificar.setFont(new java.awt.Font("Microsoft PhagsPa", 1, 14)); // NOI18N
+        btnCategoriaModificar.setForeground(new java.awt.Color(255, 255, 255));
+        btnCategoriaModificar.setText("MODIFICAR");
+        btnCategoriaModificar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCategoriaModificar.setMaximumSize(new java.awt.Dimension(100, 50));
+        btnCategoriaModificar.setMinimumSize(new java.awt.Dimension(100, 50));
+        btnCategoriaModificar.setPreferredSize(new java.awt.Dimension(120, 35));
+        btnCategoriaModificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCategoriaModificar1ActionPerformed(evt);
+                btnCategoriaModificarActionPerformed(evt);
             }
         });
-        pnlCategorias.add(btnCategoriaModificar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 260, -1, -1));
+        pnlCategorias.add(btnCategoriaModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 260, -1, -1));
 
         btnCategoriaLimpiar.setBackground(new java.awt.Color(59, 130, 246));
         btnCategoriaLimpiar.setFont(new java.awt.Font("Microsoft PhagsPa", 1, 14)); // NOI18N
@@ -505,7 +557,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         txtCategoriaDescripcion.setText(source.getModel().getValueAt(row, 1) + "");
     }//GEN-LAST:event_tblCategoriasMouseClicked
 
-    private void btnCategoriaModificar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCategoriaModificar1ActionPerformed
+    private void btnCategoriaModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCategoriaModificarActionPerformed
         if (txtCategoriaCodigo.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "Selecciona una categoria", "Alerta", JOptionPane.WARNING_MESSAGE);
         } else {
@@ -518,7 +570,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             this.limpiarCategoriaCampos();
             tblCategorias.setModel(categorias.select());
         }
-    }//GEN-LAST:event_btnCategoriaModificar1ActionPerformed
+    }//GEN-LAST:event_btnCategoriaModificarActionPerformed
 
     private void btnCategoriaGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCategoriaGuardarActionPerformed
         CategoriasCRUD categorias = new CategoriasCRUD();
@@ -534,6 +586,27 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private void pnlCategoriasComponentHidden(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_pnlCategoriasComponentHidden
         this.limpiarCategoriaCampos();
     }//GEN-LAST:event_pnlCategoriasComponentHidden
+
+    private void btnConfiguracionModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfiguracionModificarActionPerformed
+        if (txtConfiguracionAlumnos.getText().equals("") || txtConfiguracionProfesores.getText().equals("") || txtConfiguracionMora.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Ingresa todos los datos", "Alerta", JOptionPane.WARNING_MESSAGE);
+        } else {
+            ConfiguracionCRUD configuracion = new ConfiguracionCRUD();
+            if (configuracion.update(Integer.parseInt(txtConfiguracionAlumnos.getText()), Integer.parseInt(txtConfiguracionProfesores.getText()), Float.parseFloat(txtConfiguracionMora.getText())) == 1) {
+                JOptionPane.showMessageDialog(null, "Configuracion modificada correctamente", "Correcto", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(null, "Error al modificar configuracion", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+    }//GEN-LAST:event_btnConfiguracionModificarActionPerformed
+
+    private void pnlConfiguracionComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_pnlConfiguracionComponentShown
+        ConfiguracionCRUD configuracion = new ConfiguracionCRUD();
+        String[] valores = configuracion.select();
+        txtConfiguracionAlumnos.setText(valores[0]);
+        txtConfiguracionProfesores.setText(valores[1]);
+        txtConfiguracionMora.setText(valores[2]);
+    }//GEN-LAST:event_pnlConfiguracionComponentShown
 
     /**
      * @param args the command line arguments
@@ -575,10 +648,12 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btnCategoriaEliminar;
     private javax.swing.JButton btnCategoriaGuardar;
     private javax.swing.JButton btnCategoriaLimpiar;
-    private javax.swing.JButton btnCategoriaModificar1;
+    private javax.swing.JButton btnCategoriaModificar;
+    private javax.swing.JButton btnCategoriaModificar2;
     private javax.swing.JButton btnCategorias;
     private javax.swing.JButton btnCerrarSesion;
     private javax.swing.JButton btnConfiguracion;
+    private javax.swing.JButton btnConfiguracionModificar;
     private javax.swing.JButton btnEjemplares;
     private javax.swing.JButton btnPrestamos;
     private javax.swing.JButton btnRoles;
@@ -589,6 +664,9 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -609,5 +687,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JTable tblCategorias;
     private javax.swing.JTextField txtCategoriaCodigo;
     private javax.swing.JTextField txtCategoriaDescripcion;
+    private javax.swing.JTextField txtConfiguracionAlumnos;
+    private javax.swing.JTextField txtConfiguracionMora;
+    private javax.swing.JTextField txtConfiguracionProfesores;
     // End of variables declaration//GEN-END:variables
 }
