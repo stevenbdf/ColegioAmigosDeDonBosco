@@ -63,6 +63,18 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         pnlAutores = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        txtApellidos = new javax.swing.JTextField();
+        txtFechaNacimiento = new javax.swing.JTextField();
+        jLabel20 = new javax.swing.JLabel();
+        txtAutores = new javax.swing.JTextField();
+        btnAutorLimpiar = new javax.swing.JButton();
+        btnAutorEliminar = new javax.swing.JButton();
+        btnAutorGuardar = new javax.swing.JButton();
+        btnAutorModificar = new javax.swing.JButton();
+        jScrollPanel1 = new javax.swing.JScrollPane();
+        tblAutor = new javax.swing.JTable();
         pnlPrestamos = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         pnlEjemplares = new javax.swing.JPanel();
@@ -78,6 +90,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         btnConfiguracionModificar = new javax.swing.JButton();
         pnlRoles = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
         pnlUsuarios = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         pnlCategorias = new javax.swing.JPanel();
@@ -249,6 +263,110 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jLabel12.setText("Autores");
         pnlAutores.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
 
+        jLabel18.setFont(new java.awt.Font("Microsoft PhagsPa", 0, 14)); // NOI18N
+        jLabel18.setText("Nombres:");
+        pnlAutores.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, -1, -1));
+
+        jLabel19.setFont(new java.awt.Font("Microsoft PhagsPa", 0, 14)); // NOI18N
+        jLabel19.setText("Apellidos:");
+        pnlAutores.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 70, -1, -1));
+
+        txtApellidos.setFont(new java.awt.Font("Microsoft PhagsPa", 0, 14)); // NOI18N
+        pnlAutores.add(txtApellidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 110, 290, 40));
+        txtApellidos.getAccessibleContext().setAccessibleName("");
+
+        txtFechaNacimiento.setFont(new java.awt.Font("Microsoft PhagsPa", 0, 14)); // NOI18N
+        pnlAutores.add(txtFechaNacimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 110, 200, 40));
+
+        jLabel20.setFont(new java.awt.Font("Microsoft PhagsPa", 0, 14)); // NOI18N
+        jLabel20.setText("Fecha de Nacimiento:");
+        pnlAutores.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 70, -1, -1));
+
+        txtAutores.setFont(new java.awt.Font("Microsoft PhagsPa", 0, 14)); // NOI18N
+        pnlAutores.add(txtAutores, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 200, 40));
+
+        btnAutorLimpiar.setBackground(new java.awt.Color(59, 130, 246));
+        btnAutorLimpiar.setFont(new java.awt.Font("Microsoft PhagsPa", 1, 14)); // NOI18N
+        btnAutorLimpiar.setForeground(new java.awt.Color(255, 255, 255));
+        btnAutorLimpiar.setText("LIMPIAR");
+        btnAutorLimpiar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnAutorLimpiar.setMaximumSize(new java.awt.Dimension(100, 50));
+        btnAutorLimpiar.setMinimumSize(new java.awt.Dimension(100, 50));
+        btnAutorLimpiar.setPreferredSize(new java.awt.Dimension(120, 35));
+        btnAutorLimpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAutorLimpiarActionPerformed(evt);
+            }
+        });
+        pnlAutores.add(btnAutorLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 260, -1, -1));
+
+        btnAutorEliminar.setBackground(new java.awt.Color(220, 38, 38));
+        btnAutorEliminar.setFont(new java.awt.Font("Microsoft PhagsPa", 1, 14)); // NOI18N
+        btnAutorEliminar.setForeground(new java.awt.Color(255, 255, 255));
+        btnAutorEliminar.setText("ELIMINAR");
+        btnAutorEliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnAutorEliminar.setMaximumSize(new java.awt.Dimension(100, 50));
+        btnAutorEliminar.setMinimumSize(new java.awt.Dimension(100, 50));
+        btnAutorEliminar.setPreferredSize(new java.awt.Dimension(120, 35));
+        btnAutorEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAutorEliminarActionPerformed(evt);
+            }
+        });
+        pnlAutores.add(btnAutorEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 260, -1, -1));
+
+        btnAutorGuardar.setBackground(new java.awt.Color(68, 117, 245));
+        btnAutorGuardar.setFont(new java.awt.Font("Microsoft PhagsPa", 1, 14)); // NOI18N
+        btnAutorGuardar.setForeground(new java.awt.Color(255, 255, 255));
+        btnAutorGuardar.setText("GUARDAR");
+        btnAutorGuardar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnAutorGuardar.setMaximumSize(new java.awt.Dimension(100, 50));
+        btnAutorGuardar.setMinimumSize(new java.awt.Dimension(100, 50));
+        btnAutorGuardar.setPreferredSize(new java.awt.Dimension(120, 35));
+        btnAutorGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAutorGuardarActionPerformed(evt);
+            }
+        });
+        pnlAutores.add(btnAutorGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 260, -1, -1));
+
+        btnAutorModificar.setBackground(new java.awt.Color(217, 119, 6));
+        btnAutorModificar.setFont(new java.awt.Font("Microsoft PhagsPa", 1, 14)); // NOI18N
+        btnAutorModificar.setForeground(new java.awt.Color(255, 255, 255));
+        btnAutorModificar.setText("MODIFICAR");
+        btnAutorModificar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnAutorModificar.setMaximumSize(new java.awt.Dimension(100, 50));
+        btnAutorModificar.setMinimumSize(new java.awt.Dimension(100, 50));
+        btnAutorModificar.setPreferredSize(new java.awt.Dimension(120, 35));
+        btnAutorModificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAutorModificarActionPerformed(evt);
+            }
+        });
+        pnlAutores.add(btnAutorModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 260, -1, -1));
+
+        tblAutor.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        tblAutor.getTableHeader().setResizingAllowed(false);
+        tblAutor.getTableHeader().setReorderingAllowed(false);
+        tblAutor.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblAutorMouseClicked(evt);
+            }
+        });
+        jScrollPanel1.setViewportView(tblAutor);
+
+        pnlAutores.add(jScrollPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 820, 270));
+
         getContentPane().add(pnlAutores, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 0, 880, 600));
 
         pnlPrestamos.setBackground(new java.awt.Color(255, 255, 255));
@@ -343,6 +461,18 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Microsoft PhagsPa", 1, 18)); // NOI18N
         jLabel6.setText("Roles");
         pnlRoles.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
+
+        jLabel21.setFont(new java.awt.Font("Microsoft PhagsPa", 0, 14)); // NOI18N
+        jLabel21.setText("Seleccionar Rol:");
+        pnlRoles.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, -1, -1));
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Administrador", "Profesor", "Estudiante" }));
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
+        pnlRoles.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 60, -1, -1));
 
         getContentPane().add(pnlRoles, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 0, 880, 600));
 
@@ -608,6 +738,30 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         txtConfiguracionMora.setText(valores[2]);
     }//GEN-LAST:event_pnlConfiguracionComponentShown
 
+    private void btnAutorLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAutorLimpiarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAutorLimpiarActionPerformed
+
+    private void btnAutorEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAutorEliminarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAutorEliminarActionPerformed
+
+    private void btnAutorGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAutorGuardarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAutorGuardarActionPerformed
+
+    private void btnAutorModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAutorModificarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAutorModificarActionPerformed
+
+    private void tblAutorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblAutorMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tblAutorMouseClicked
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -644,6 +798,10 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAutorEliminar;
+    private javax.swing.JButton btnAutorGuardar;
+    private javax.swing.JButton btnAutorLimpiar;
+    private javax.swing.JButton btnAutorModificar;
     private javax.swing.JButton btnAutores;
     private javax.swing.JButton btnCategoriaEliminar;
     private javax.swing.JButton btnCategoriaGuardar;
@@ -657,6 +815,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btnPrestamos;
     private javax.swing.JButton btnRoles;
     private javax.swing.JButton btnUsuarios;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -666,7 +825,11 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -675,6 +838,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPanel1;
     private javax.swing.JPanel pnlAutores;
     private javax.swing.JPanel pnlBienvenida;
     private javax.swing.JPanel pnlCategorias;
@@ -683,11 +847,15 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel pnlPrestamos;
     private javax.swing.JPanel pnlRoles;
     private javax.swing.JPanel pnlUsuarios;
+    private javax.swing.JTable tblAutor;
     private javax.swing.JTable tblCategorias;
+    private javax.swing.JTextField txtApellidos;
+    private javax.swing.JTextField txtAutores;
     private javax.swing.JTextField txtCategoriaCodigo;
     private javax.swing.JTextField txtCategoriaDescripcion;
     private javax.swing.JTextField txtConfiguracionAlumnos;
     private javax.swing.JTextField txtConfiguracionMora;
     private javax.swing.JTextField txtConfiguracionProfesores;
+    private javax.swing.JTextField txtFechaNacimiento;
     // End of variables declaration//GEN-END:variables
 }
