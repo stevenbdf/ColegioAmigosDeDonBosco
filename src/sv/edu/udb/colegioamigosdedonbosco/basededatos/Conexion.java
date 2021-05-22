@@ -8,7 +8,7 @@ public class Conexion {
 
     private final String SERVIDOR_BD = "localhost";
     private final String PUERTO_BD = "3306";
-    private final String NOMBRE_BD = "mediateca";
+    private final String NOMBRE_BD = "cadb";
     private final String USUARIO_BD = "root";
     private final String CONTRASENA_BD = "";
 

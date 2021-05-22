@@ -6,11 +6,10 @@
 package sv.edu.udb.colegioamigosdedonbosco.formularios;
 
 import java.awt.Color;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import sv.edu.udb.colegioamigosdedonbosco.basededatos.CategoriasCRUD;
 
-/**
- *
- * @author elaniin
- */
 public class PantallaPrincipal extends javax.swing.JFrame {
 
     /**
@@ -21,7 +20,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         mostrarPanel("bienvenida");
         this.getContentPane().setBackground(Color.WHITE);
     }
-    
+
     private void mostrarPanel(String panel) {
         pnlPrestamos.setVisible(panel.equals("prestamos"));
         pnlEjemplares.setVisible(panel.equals("ejemplares"));
@@ -30,6 +29,12 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         pnlRoles.setVisible(panel.equals("roles"));
         pnlConfiguracion.setVisible(panel.equals("configuracion"));
         pnlBienvenida.setVisible(panel.equals("bienvenida"));
+        pnlAutores.setVisible(panel.equals("autores"));
+    }
+
+    private void limpiarCategoriaCampos() {
+        txtCategoriaCodigo.setText("");
+        txtCategoriaDescripcion.setText("");
     }
 
     /**
@@ -41,6 +46,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btnAutores = new javax.swing.JButton();
         btnCerrarSesion = new javax.swing.JButton();
         btnCategorias = new javax.swing.JButton();
         btnRoles = new javax.swing.JButton();
@@ -54,6 +60,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         pnlBienvenida = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
+        pnlAutores = new javax.swing.JPanel();
+        jLabel12 = new javax.swing.JLabel();
         pnlPrestamos = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         pnlEjemplares = new javax.swing.JPanel();
@@ -66,8 +74,19 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         pnlCategorias = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblCategorias = new javax.swing.JTable();
+        txtCategoriaDescripcion = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
+        btnCategoriaEliminar = new javax.swing.JButton();
+        btnCategoriaGuardar = new javax.swing.JButton();
+        btnCategoriaModificar1 = new javax.swing.JButton();
+        btnCategoriaLimpiar = new javax.swing.JButton();
+        txtCategoriaCodigo = new javax.swing.JTextField();
+        jLabel14 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Colegio Amigos de Don Bosco");
         setAutoRequestFocus(false);
         setBackground(new java.awt.Color(0, 204, 51));
         setMaximumSize(new java.awt.Dimension(1000, 600));
@@ -76,6 +95,18 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         setResizable(false);
         setSize(new java.awt.Dimension(1000, 600));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnAutores.setBackground(new java.awt.Color(55, 60, 86));
+        btnAutores.setFont(new java.awt.Font("Microsoft PhagsPa", 0, 11)); // NOI18N
+        btnAutores.setForeground(new java.awt.Color(255, 255, 255));
+        btnAutores.setText("AUTORES");
+        btnAutores.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAutores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAutoresActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnAutores, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, 120, 50));
 
         btnCerrarSesion.setBackground(new java.awt.Color(199, 0, 57));
         btnCerrarSesion.setFont(new java.awt.Font("Microsoft PhagsPa", 0, 11)); // NOI18N
@@ -87,7 +118,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 btnCerrarSesionActionPerformed(evt);
             }
         });
-        getContentPane().add(btnCerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 380, 120, 50));
+        getContentPane().add(btnCerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 430, 120, 50));
 
         btnCategorias.setBackground(new java.awt.Color(55, 60, 86));
         btnCategorias.setFont(new java.awt.Font("Microsoft PhagsPa", 0, 11)); // NOI18N
@@ -111,7 +142,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 btnRolesActionPerformed(evt);
             }
         });
-        getContentPane().add(btnRoles, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 120, 50));
+        getContentPane().add(btnRoles, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 330, 120, 50));
 
         btnConfiguracion.setBackground(new java.awt.Color(55, 60, 86));
         btnConfiguracion.setFont(new java.awt.Font("Microsoft PhagsPa", 0, 11)); // NOI18N
@@ -123,7 +154,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 btnConfiguracionActionPerformed(evt);
             }
         });
-        getContentPane().add(btnConfiguracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 330, 120, 50));
+        getContentPane().add(btnConfiguracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 380, 120, 50));
 
         btnPrestamos.setBackground(new java.awt.Color(55, 60, 86));
         btnPrestamos.setFont(new java.awt.Font("Microsoft PhagsPa", 0, 11)); // NOI18N
@@ -147,7 +178,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 btnUsuariosActionPerformed(evt);
             }
         });
-        getContentPane().add(btnUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, 120, 50));
+        getContentPane().add(btnUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 120, 50));
 
         btnEjemplares.setBackground(new java.awt.Color(55, 60, 86));
         btnEjemplares.setFont(new java.awt.Font("Microsoft PhagsPa", 0, 11)); // NOI18N
@@ -192,9 +223,25 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         jLabel11.setFont(new java.awt.Font("Microsoft PhagsPa", 1, 36)); // NOI18N
         jLabel11.setText("¡Bienvenido!");
-        pnlBienvenida.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 30, -1, -1));
+        pnlBienvenida.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 30, -1, -1));
 
         getContentPane().add(pnlBienvenida, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 0, 880, 600));
+
+        pnlAutores.setBackground(new java.awt.Color(255, 255, 255));
+        pnlAutores.setMaximumSize(new java.awt.Dimension(880, 600));
+        pnlAutores.setMinimumSize(new java.awt.Dimension(880, 600));
+        pnlAutores.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentShown(java.awt.event.ComponentEvent evt) {
+                pnlAutoresComponentShown(evt);
+            }
+        });
+        pnlAutores.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel12.setFont(new java.awt.Font("Microsoft PhagsPa", 1, 18)); // NOI18N
+        jLabel12.setText("Autores");
+        pnlAutores.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
+
+        getContentPane().add(pnlAutores, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 0, 880, 600));
 
         pnlPrestamos.setBackground(new java.awt.Color(255, 255, 255));
         pnlPrestamos.setMaximumSize(new java.awt.Dimension(880, 600));
@@ -263,11 +310,118 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         pnlCategorias.setMaximumSize(new java.awt.Dimension(880, 600));
         pnlCategorias.setMinimumSize(new java.awt.Dimension(880, 600));
         pnlCategorias.setPreferredSize(new java.awt.Dimension(880, 600));
+        pnlCategorias.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentHidden(java.awt.event.ComponentEvent evt) {
+                pnlCategoriasComponentHidden(evt);
+            }
+            public void componentShown(java.awt.event.ComponentEvent evt) {
+                pnlCategoriasComponentShown(evt);
+            }
+        });
         pnlCategorias.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel8.setFont(new java.awt.Font("Microsoft PhagsPa", 1, 18)); // NOI18N
-        jLabel8.setText("Categorias");
-        pnlCategorias.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
+        jLabel8.setFont(new java.awt.Font("Microsoft PhagsPa", 0, 14)); // NOI18N
+        jLabel8.setText("Descripción");
+        pnlCategorias.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 60, -1, -1));
+
+        tblCategorias.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        tblCategorias.getTableHeader().setResizingAllowed(false);
+        tblCategorias.getTableHeader().setReorderingAllowed(false);
+        tblCategorias.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblCategoriasMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(tblCategorias);
+
+        pnlCategorias.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 820, 270));
+
+        txtCategoriaDescripcion.setFont(new java.awt.Font("Microsoft PhagsPa", 0, 14)); // NOI18N
+        txtCategoriaDescripcion.setPreferredSize(new java.awt.Dimension(300, 35));
+        pnlCategorias.add(txtCategoriaDescripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 90, -1, -1));
+
+        jLabel13.setFont(new java.awt.Font("Microsoft PhagsPa", 1, 18)); // NOI18N
+        jLabel13.setText("Categorias");
+        pnlCategorias.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
+
+        btnCategoriaEliminar.setBackground(new java.awt.Color(220, 38, 38));
+        btnCategoriaEliminar.setFont(new java.awt.Font("Microsoft PhagsPa", 1, 14)); // NOI18N
+        btnCategoriaEliminar.setForeground(new java.awt.Color(255, 255, 255));
+        btnCategoriaEliminar.setText("ELIMINAR");
+        btnCategoriaEliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCategoriaEliminar.setMaximumSize(new java.awt.Dimension(100, 50));
+        btnCategoriaEliminar.setMinimumSize(new java.awt.Dimension(100, 50));
+        btnCategoriaEliminar.setPreferredSize(new java.awt.Dimension(120, 35));
+        btnCategoriaEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCategoriaEliminarActionPerformed(evt);
+            }
+        });
+        pnlCategorias.add(btnCategoriaEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 260, -1, -1));
+
+        btnCategoriaGuardar.setBackground(new java.awt.Color(68, 117, 245));
+        btnCategoriaGuardar.setFont(new java.awt.Font("Microsoft PhagsPa", 1, 14)); // NOI18N
+        btnCategoriaGuardar.setForeground(new java.awt.Color(255, 255, 255));
+        btnCategoriaGuardar.setText("GUARDAR");
+        btnCategoriaGuardar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCategoriaGuardar.setMaximumSize(new java.awt.Dimension(100, 50));
+        btnCategoriaGuardar.setMinimumSize(new java.awt.Dimension(100, 50));
+        btnCategoriaGuardar.setPreferredSize(new java.awt.Dimension(120, 35));
+        btnCategoriaGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCategoriaGuardarActionPerformed(evt);
+            }
+        });
+        pnlCategorias.add(btnCategoriaGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 260, -1, -1));
+
+        btnCategoriaModificar1.setBackground(new java.awt.Color(217, 119, 6));
+        btnCategoriaModificar1.setFont(new java.awt.Font("Microsoft PhagsPa", 1, 14)); // NOI18N
+        btnCategoriaModificar1.setForeground(new java.awt.Color(255, 255, 255));
+        btnCategoriaModificar1.setText("MODIFICAR");
+        btnCategoriaModificar1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCategoriaModificar1.setMaximumSize(new java.awt.Dimension(100, 50));
+        btnCategoriaModificar1.setMinimumSize(new java.awt.Dimension(100, 50));
+        btnCategoriaModificar1.setPreferredSize(new java.awt.Dimension(120, 35));
+        btnCategoriaModificar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCategoriaModificar1ActionPerformed(evt);
+            }
+        });
+        pnlCategorias.add(btnCategoriaModificar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 260, -1, -1));
+
+        btnCategoriaLimpiar.setBackground(new java.awt.Color(59, 130, 246));
+        btnCategoriaLimpiar.setFont(new java.awt.Font("Microsoft PhagsPa", 1, 14)); // NOI18N
+        btnCategoriaLimpiar.setForeground(new java.awt.Color(255, 255, 255));
+        btnCategoriaLimpiar.setText("LIMPIAR");
+        btnCategoriaLimpiar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCategoriaLimpiar.setMaximumSize(new java.awt.Dimension(100, 50));
+        btnCategoriaLimpiar.setMinimumSize(new java.awt.Dimension(100, 50));
+        btnCategoriaLimpiar.setPreferredSize(new java.awt.Dimension(120, 35));
+        btnCategoriaLimpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCategoriaLimpiarActionPerformed(evt);
+            }
+        });
+        pnlCategorias.add(btnCategoriaLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 260, -1, -1));
+
+        txtCategoriaCodigo.setFont(new java.awt.Font("Microsoft PhagsPa", 0, 14)); // NOI18N
+        txtCategoriaCodigo.setEnabled(false);
+        txtCategoriaCodigo.setPreferredSize(new java.awt.Dimension(300, 35));
+        pnlCategorias.add(txtCategoriaCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 200, -1));
+
+        jLabel14.setFont(new java.awt.Font("Microsoft PhagsPa", 0, 14)); // NOI18N
+        jLabel14.setText("Código");
+        pnlCategorias.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, -1, -1));
 
         getContentPane().add(pnlCategorias, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 0, 880, 600));
 
@@ -312,6 +466,75 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_pnlBienvenidaComponentShown
 
+    private void btnAutoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAutoresActionPerformed
+        this.mostrarPanel("autores");
+    }//GEN-LAST:event_btnAutoresActionPerformed
+
+    private void pnlAutoresComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_pnlAutoresComponentShown
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pnlAutoresComponentShown
+
+    private void pnlCategoriasComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_pnlCategoriasComponentShown
+        CategoriasCRUD categorias = new CategoriasCRUD();
+        tblCategorias.setModel(categorias.select());
+    }//GEN-LAST:event_pnlCategoriasComponentShown
+
+    private void btnCategoriaEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCategoriaEliminarActionPerformed
+        if (txtCategoriaCodigo.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Selecciona una categoria", "Alerta", JOptionPane.WARNING_MESSAGE);
+        } else {
+            CategoriasCRUD categorias = new CategoriasCRUD();
+            if (categorias.delete(Integer.parseInt(txtCategoriaCodigo.getText())) == 1) {
+                JOptionPane.showMessageDialog(null, "Categoria eliminada correctamente", "Correcto", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(null, "Error al eliminar categoria", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+            this.limpiarCategoriaCampos();
+            tblCategorias.setModel(categorias.select());
+        }
+    }//GEN-LAST:event_btnCategoriaEliminarActionPerformed
+
+    private void btnCategoriaLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCategoriaLimpiarActionPerformed
+        this.limpiarCategoriaCampos();
+    }//GEN-LAST:event_btnCategoriaLimpiarActionPerformed
+
+    private void tblCategoriasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblCategoriasMouseClicked
+        JTable source = (JTable) evt.getSource();
+        int row = source.rowAtPoint(evt.getPoint());
+        txtCategoriaCodigo.setText(source.getModel().getValueAt(row, 0) + "");
+        txtCategoriaDescripcion.setText(source.getModel().getValueAt(row, 1) + "");
+    }//GEN-LAST:event_tblCategoriasMouseClicked
+
+    private void btnCategoriaModificar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCategoriaModificar1ActionPerformed
+        if (txtCategoriaCodigo.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Selecciona una categoria", "Alerta", JOptionPane.WARNING_MESSAGE);
+        } else {
+            CategoriasCRUD categorias = new CategoriasCRUD();
+            if (categorias.update(txtCategoriaDescripcion.getText(), Integer.parseInt(txtCategoriaCodigo.getText())) == 1) {
+                JOptionPane.showMessageDialog(null, "Categoria modificada correctamente", "Correcto", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(null, "Error al modificar categoria", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+            this.limpiarCategoriaCampos();
+            tblCategorias.setModel(categorias.select());
+        }
+    }//GEN-LAST:event_btnCategoriaModificar1ActionPerformed
+
+    private void btnCategoriaGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCategoriaGuardarActionPerformed
+        CategoriasCRUD categorias = new CategoriasCRUD();
+        if (categorias.insert(txtCategoriaDescripcion.getText()) == 1) {
+            JOptionPane.showMessageDialog(null, "Categoria creada correctamente", "Correcto", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(null, "Error al crear categoria", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+        this.limpiarCategoriaCampos();
+        tblCategorias.setModel(categorias.select());
+    }//GEN-LAST:event_btnCategoriaGuardarActionPerformed
+
+    private void pnlCategoriasComponentHidden(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_pnlCategoriasComponentHidden
+        this.limpiarCategoriaCampos();
+    }//GEN-LAST:event_pnlCategoriasComponentHidden
+
     /**
      * @param args the command line arguments
      */
@@ -348,6 +571,11 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAutores;
+    private javax.swing.JButton btnCategoriaEliminar;
+    private javax.swing.JButton btnCategoriaGuardar;
+    private javax.swing.JButton btnCategoriaLimpiar;
+    private javax.swing.JButton btnCategoriaModificar1;
     private javax.swing.JButton btnCategorias;
     private javax.swing.JButton btnCerrarSesion;
     private javax.swing.JButton btnConfiguracion;
@@ -358,6 +586,9 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -366,6 +597,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JPanel pnlAutores;
     private javax.swing.JPanel pnlBienvenida;
     private javax.swing.JPanel pnlCategorias;
     private javax.swing.JPanel pnlConfiguracion;
@@ -373,5 +606,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel pnlPrestamos;
     private javax.swing.JPanel pnlRoles;
     private javax.swing.JPanel pnlUsuarios;
+    private javax.swing.JTable tblCategorias;
+    private javax.swing.JTextField txtCategoriaCodigo;
+    private javax.swing.JTextField txtCategoriaDescripcion;
     // End of variables declaration//GEN-END:variables
 }
