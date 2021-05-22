@@ -67,7 +67,7 @@ public class IniciarSesion extends javax.swing.JFrame {
         lblOlvidasteContrasena.setFont(new java.awt.Font("Microsoft PhagsPa", 0, 18)); // NOI18N
         lblOlvidasteContrasena.setForeground(new java.awt.Color(68, 117, 245));
         lblOlvidasteContrasena.setText("¿Olvidaste tu contraseña?");
-        lblOlvidasteContrasena.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblOlvidasteContrasena.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         lblOlvidasteContrasena.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 lblOlvidasteContrasenaMouseEntered(evt);
@@ -84,7 +84,7 @@ public class IniciarSesion extends javax.swing.JFrame {
         btnIngresar.setFont(new java.awt.Font("Microsoft PhagsPa", 0, 18)); // NOI18N
         btnIngresar.setForeground(new java.awt.Color(255, 255, 255));
         btnIngresar.setText("INGRESAR");
-        btnIngresar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnIngresar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnIngresar.setMaximumSize(new java.awt.Dimension(100, 50));
         btnIngresar.setMinimumSize(new java.awt.Dimension(100, 50));
         btnIngresar.setPreferredSize(new java.awt.Dimension(100, 50));

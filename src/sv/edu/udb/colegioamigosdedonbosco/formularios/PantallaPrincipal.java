@@ -108,7 +108,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         btnAutores.setFont(new java.awt.Font("Microsoft PhagsPa", 0, 11)); // NOI18N
         btnAutores.setForeground(new java.awt.Color(255, 255, 255));
         btnAutores.setText("AUTORES");
-        btnAutores.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAutores.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnAutores.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAutoresActionPerformed(evt);
@@ -120,7 +120,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         btnCerrarSesion.setFont(new java.awt.Font("Microsoft PhagsPa", 0, 11)); // NOI18N
         btnCerrarSesion.setForeground(new java.awt.Color(255, 255, 255));
         btnCerrarSesion.setText("CERRAR SESIÓN");
-        btnCerrarSesion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCerrarSesion.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnCerrarSesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCerrarSesionActionPerformed(evt);
@@ -132,7 +132,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         btnCategorias.setFont(new java.awt.Font("Microsoft PhagsPa", 0, 11)); // NOI18N
         btnCategorias.setForeground(new java.awt.Color(255, 255, 255));
         btnCategorias.setText("CATEGORIAS");
-        btnCategorias.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCategorias.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnCategorias.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCategoriasActionPerformed(evt);
@@ -144,7 +144,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         btnRoles.setFont(new java.awt.Font("Microsoft PhagsPa", 0, 11)); // NOI18N
         btnRoles.setForeground(new java.awt.Color(255, 255, 255));
         btnRoles.setText("ROLES");
-        btnRoles.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnRoles.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnRoles.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRolesActionPerformed(evt);
@@ -156,7 +156,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         btnConfiguracion.setFont(new java.awt.Font("Microsoft PhagsPa", 0, 11)); // NOI18N
         btnConfiguracion.setForeground(new java.awt.Color(255, 255, 255));
         btnConfiguracion.setText("CONFIGURACIÓN");
-        btnConfiguracion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnConfiguracion.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnConfiguracion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnConfiguracionActionPerformed(evt);
@@ -168,7 +168,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         btnPrestamos.setFont(new java.awt.Font("Microsoft PhagsPa", 0, 11)); // NOI18N
         btnPrestamos.setForeground(new java.awt.Color(255, 255, 255));
         btnPrestamos.setText("PRESTAMOS");
-        btnPrestamos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnPrestamos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnPrestamos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPrestamosActionPerformed(evt);
@@ -180,7 +180,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         btnUsuarios.setFont(new java.awt.Font("Microsoft PhagsPa", 0, 11)); // NOI18N
         btnUsuarios.setForeground(new java.awt.Color(255, 255, 255));
         btnUsuarios.setText("USUARIOS");
-        btnUsuarios.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnUsuarios.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnUsuarios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnUsuariosActionPerformed(evt);
@@ -192,7 +192,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         btnEjemplares.setFont(new java.awt.Font("Microsoft PhagsPa", 0, 11)); // NOI18N
         btnEjemplares.setForeground(new java.awt.Color(255, 255, 255));
         btnEjemplares.setText("EJEMPLARES");
-        btnEjemplares.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnEjemplares.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnEjemplares.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEjemplaresActionPerformed(evt);
@@ -321,7 +321,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         btnConfiguracionModificar.setFont(new java.awt.Font("Microsoft PhagsPa", 1, 14)); // NOI18N
         btnConfiguracionModificar.setForeground(new java.awt.Color(255, 255, 255));
         btnConfiguracionModificar.setText("MODIFICAR");
-        btnConfiguracionModificar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnConfiguracionModificar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnConfiguracionModificar.setMaximumSize(new java.awt.Dimension(100, 50));
         btnConfiguracionModificar.setMinimumSize(new java.awt.Dimension(100, 50));
         btnConfiguracionModificar.setPreferredSize(new java.awt.Dimension(120, 35));
@@ -410,7 +410,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         btnCategoriaEliminar.setFont(new java.awt.Font("Microsoft PhagsPa", 1, 14)); // NOI18N
         btnCategoriaEliminar.setForeground(new java.awt.Color(255, 255, 255));
         btnCategoriaEliminar.setText("ELIMINAR");
-        btnCategoriaEliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCategoriaEliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnCategoriaEliminar.setMaximumSize(new java.awt.Dimension(100, 50));
         btnCategoriaEliminar.setMinimumSize(new java.awt.Dimension(100, 50));
         btnCategoriaEliminar.setPreferredSize(new java.awt.Dimension(120, 35));
@@ -425,7 +425,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         btnCategoriaGuardar.setFont(new java.awt.Font("Microsoft PhagsPa", 1, 14)); // NOI18N
         btnCategoriaGuardar.setForeground(new java.awt.Color(255, 255, 255));
         btnCategoriaGuardar.setText("GUARDAR");
-        btnCategoriaGuardar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCategoriaGuardar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnCategoriaGuardar.setMaximumSize(new java.awt.Dimension(100, 50));
         btnCategoriaGuardar.setMinimumSize(new java.awt.Dimension(100, 50));
         btnCategoriaGuardar.setPreferredSize(new java.awt.Dimension(120, 35));
@@ -440,7 +440,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         btnCategoriaModificar.setFont(new java.awt.Font("Microsoft PhagsPa", 1, 14)); // NOI18N
         btnCategoriaModificar.setForeground(new java.awt.Color(255, 255, 255));
         btnCategoriaModificar.setText("MODIFICAR");
-        btnCategoriaModificar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCategoriaModificar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnCategoriaModificar.setMaximumSize(new java.awt.Dimension(100, 50));
         btnCategoriaModificar.setMinimumSize(new java.awt.Dimension(100, 50));
         btnCategoriaModificar.setPreferredSize(new java.awt.Dimension(120, 35));
@@ -455,7 +455,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         btnCategoriaLimpiar.setFont(new java.awt.Font("Microsoft PhagsPa", 1, 14)); // NOI18N
         btnCategoriaLimpiar.setForeground(new java.awt.Color(255, 255, 255));
         btnCategoriaLimpiar.setText("LIMPIAR");
-        btnCategoriaLimpiar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCategoriaLimpiar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnCategoriaLimpiar.setMaximumSize(new java.awt.Dimension(100, 50));
         btnCategoriaLimpiar.setMinimumSize(new java.awt.Dimension(100, 50));
         btnCategoriaLimpiar.setPreferredSize(new java.awt.Dimension(120, 35));
@@ -649,7 +649,6 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btnCategoriaGuardar;
     private javax.swing.JButton btnCategoriaLimpiar;
     private javax.swing.JButton btnCategoriaModificar;
-    private javax.swing.JButton btnCategoriaModificar2;
     private javax.swing.JButton btnCategorias;
     private javax.swing.JButton btnCerrarSesion;
     private javax.swing.JButton btnConfiguracion;
