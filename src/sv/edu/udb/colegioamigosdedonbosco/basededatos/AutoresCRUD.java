@@ -13,16 +13,17 @@ import javax.swing.table.DefaultTableModel;
  * @author PCECA
  */
 public class AutoresCRUD {
+
     private final String SQL_INSERT
-            = "INSERT INTO autores(nombres) VALUES (?)";
+            = "INSERT INTO autores(nombres, apellidos, fecha_nacimiento) VALUES (?, ?, ?)";
     private final String SQL_UPDATE
-            = "UPDATE autores SET nombres = ? WHERE idautores = ?";
+            = "UPDATE autores SET nombres = ?, apellidos = ?, fecha_nacimiento = ? WHERE id = ?";
     private final String SQL_DELETE
-            = "DELETE FROM autores WHERE idautor = ?";
+            = "DELETE FROM autores WHERE id = ?";
     private final String SQL_SELECT
-            = "SELECT id as Codigo, descripcion as Descripcion FROM categorias";
-    
-    public int insert(String descripcion) {
+            = "SELECT id as Codigo, nombres as Nombres, apellidos as Apellidos, fecha_nacimiento as 'Fecha de Nacimiento' FROM autores";
+
+    public int insert(String nombres, String apellidos, String fecha_nacimiento) {
         int rows = 0;
         try {
             Conexion conexion = new Conexion();
@@ -31,7 +32,10 @@ public class AutoresCRUD {
             stmt = conn.prepareStatement(this.SQL_INSERT);
             int index = 1;
 
-            stmt.setString(index++, descripcion);
+            stmt.setString(index++, nombres);
+            stmt.setString(index++, apellidos);
+            stmt.setString(index++, fecha_nacimiento);
+
             rows = stmt.executeUpdate();
             System.out.println("Numero de registros afectados: " + rows);
             conexion.cerrarConexion();
@@ -41,7 +45,7 @@ public class AutoresCRUD {
         return rows;
     }
 
-    public int update(String descripcion, int id) {
+    public int update(String nombres, String apellidos, String fecha_nacimiento, int id) {
         int rows = 0;
         try {
             Conexion conexion = new Conexion();
@@ -50,7 +54,9 @@ public class AutoresCRUD {
             stmt = conn.prepareStatement(this.SQL_UPDATE);
             int index = 1;
 
-            stmt.setString(index++, descripcion);
+            stmt.setString(index++, nombres);
+            stmt.setString(index++, apellidos);
+            stmt.setString(index++, fecha_nacimiento);
             stmt.setInt(index++, id);
             rows = stmt.executeUpdate();
             System.out.println("Numero de registros afectados: " + rows);
@@ -88,7 +94,7 @@ public class AutoresCRUD {
                 return false;
             }
         };
-        
+
         try {
             Conexion conexion = new Conexion();
             Connection conn = conexion.getConexion();

@@ -9,6 +9,7 @@ import java.awt.Color;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.TableModel;
+import sv.edu.udb.colegioamigosdedonbosco.basededatos.AutoresCRUD;
 import sv.edu.udb.colegioamigosdedonbosco.basededatos.CategoriasCRUD;
 import sv.edu.udb.colegioamigosdedonbosco.basededatos.ConfiguracionCRUD;
 
@@ -34,18 +35,17 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     }
 
     private void limpiarAutoresCampos() {
-        txtAutores1.setText("");
-        txtIdAutor.setText("");
-        txtApellidos.setText("");
-        txtFechaNacimiento.setText("");
+        txtAutoresNombres.setText("");
+        txtAutoresCodigo.setText("");
+        txtAutoresApellidos.setText("");
+        txtAutoresFechaNacimiento.setText("");
     }
 
     private void limpiarCategoriaCampos() {
         txtCategoriaCodigo.setText("");
         txtCategoriaDescripcion.setText("");
     }
-    
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -72,18 +72,18 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
-        txtApellidos = new javax.swing.JTextField();
-        txtFechaNacimiento = new javax.swing.JTextField();
+        txtAutoresApellidos = new javax.swing.JTextField();
+        txtAutoresFechaNacimiento = new javax.swing.JTextField();
         jLabel20 = new javax.swing.JLabel();
-        txtIdAutor = new javax.swing.JTextField();
+        txtAutoresCodigo = new javax.swing.JTextField();
         btnAutorLimpiar = new javax.swing.JButton();
         btnAutorEliminar = new javax.swing.JButton();
         btnAutorGuardar = new javax.swing.JButton();
         btnAutorModificar = new javax.swing.JButton();
         jScrollPanel1 = new javax.swing.JScrollPane();
-        tblAutor = new javax.swing.JTable();
+        tblAutores = new javax.swing.JTable();
         jLabel22 = new javax.swing.JLabel();
-        txtAutores1 = new javax.swing.JTextField();
+        txtAutoresNombres = new javax.swing.JTextField();
         pnlPrestamos = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         pnlEjemplares = new javax.swing.JPanel();
@@ -97,19 +97,6 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         txtConfiguracionMora = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
         btnConfiguracionModificar = new javax.swing.JButton();
-<<<<<<< HEAD
-=======
-        pnlRoles = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        tblCategorias1 = new javax.swing.JTable();
-        btnRolLimpiar = new javax.swing.JButton();
-        btnRolEliminar = new javax.swing.JButton();
-        btnRolModificar = new javax.swing.JButton();
-        btnRolGuardar = new javax.swing.JButton();
->>>>>>> efae1f65e82ae6330c8547aafcb05387526ba5a9
         pnlUsuarios = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         pnlCategorias = new javax.swing.JPanel();
@@ -271,26 +258,27 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         jLabel18.setFont(new java.awt.Font("Microsoft PhagsPa", 0, 14)); // NOI18N
         jLabel18.setText("Código:");
-        pnlAutores.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, -1, -1));
+        pnlAutores.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, -1, -1));
 
         jLabel19.setFont(new java.awt.Font("Microsoft PhagsPa", 0, 14)); // NOI18N
         jLabel19.setText("Apellidos:");
         pnlAutores.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 140, -1, -1));
 
-        txtApellidos.setFont(new java.awt.Font("Microsoft PhagsPa", 0, 14)); // NOI18N
-        pnlAutores.add(txtApellidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 180, 290, 40));
-        txtApellidos.getAccessibleContext().setAccessibleName("");
+        txtAutoresApellidos.setFont(new java.awt.Font("Microsoft PhagsPa", 0, 14)); // NOI18N
+        pnlAutores.add(txtAutoresApellidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 180, 290, 40));
+        txtAutoresApellidos.getAccessibleContext().setAccessibleName("");
 
-        txtFechaNacimiento.setFont(new java.awt.Font("Microsoft PhagsPa", 0, 14)); // NOI18N
-        pnlAutores.add(txtFechaNacimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 180, 200, 40));
+        txtAutoresFechaNacimiento.setFont(new java.awt.Font("Microsoft PhagsPa", 0, 14)); // NOI18N
+        pnlAutores.add(txtAutoresFechaNacimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 180, 200, 40));
 
         jLabel20.setFont(new java.awt.Font("Microsoft PhagsPa", 0, 14)); // NOI18N
         jLabel20.setText("Fecha de Nacimiento:");
         pnlAutores.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 140, -1, -1));
 
-        txtIdAutor.setBackground(new java.awt.Color(204, 204, 204));
-        txtIdAutor.setFont(new java.awt.Font("Microsoft PhagsPa", 0, 14)); // NOI18N
-        pnlAutores.add(txtIdAutor, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 70, 200, 40));
+        txtAutoresCodigo.setBackground(new java.awt.Color(240, 240, 240));
+        txtAutoresCodigo.setFont(new java.awt.Font("Microsoft PhagsPa", 0, 14)); // NOI18N
+        txtAutoresCodigo.setEnabled(false);
+        pnlAutores.add(txtAutoresCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 200, 40));
 
         btnAutorLimpiar.setBackground(new java.awt.Color(59, 130, 246));
         btnAutorLimpiar.setFont(new java.awt.Font("Microsoft PhagsPa", 1, 14)); // NOI18N
@@ -352,7 +340,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         });
         pnlAutores.add(btnAutorModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 260, -1, -1));
 
-        tblAutor.setModel(new javax.swing.table.DefaultTableModel(
+        tblAutores.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -363,14 +351,14 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        tblAutor.getTableHeader().setResizingAllowed(false);
-        tblAutor.getTableHeader().setReorderingAllowed(false);
-        tblAutor.addMouseListener(new java.awt.event.MouseAdapter() {
+        tblAutores.getTableHeader().setResizingAllowed(false);
+        tblAutores.getTableHeader().setReorderingAllowed(false);
+        tblAutores.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tblAutorMouseClicked(evt);
+                tblAutoresMouseClicked(evt);
             }
         });
-        jScrollPanel1.setViewportView(tblAutor);
+        jScrollPanel1.setViewportView(tblAutores);
 
         pnlAutores.add(jScrollPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 820, 270));
 
@@ -378,8 +366,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jLabel22.setText("Nombres:");
         pnlAutores.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, -1, -1));
 
-        txtAutores1.setFont(new java.awt.Font("Microsoft PhagsPa", 0, 14)); // NOI18N
-        pnlAutores.add(txtAutores1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 200, 40));
+        txtAutoresNombres.setFont(new java.awt.Font("Microsoft PhagsPa", 0, 14)); // NOI18N
+        pnlAutores.add(txtAutoresNombres, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 200, 40));
 
         getContentPane().add(pnlAutores, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 0, 880, 600));
 
@@ -466,115 +454,6 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         getContentPane().add(pnlConfiguracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 0, 880, 600));
 
-<<<<<<< HEAD
-=======
-        pnlRoles.setBackground(new java.awt.Color(255, 255, 255));
-        pnlRoles.setMaximumSize(new java.awt.Dimension(880, 600));
-        pnlRoles.setMinimumSize(new java.awt.Dimension(880, 600));
-        pnlRoles.setPreferredSize(new java.awt.Dimension(880, 600));
-        pnlRoles.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel6.setFont(new java.awt.Font("Microsoft PhagsPa", 1, 18)); // NOI18N
-        jLabel6.setText("Roles");
-        pnlRoles.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
-
-        jLabel21.setFont(new java.awt.Font("Microsoft PhagsPa", 0, 14)); // NOI18N
-        jLabel21.setText("Seleccionar Rol:");
-        pnlRoles.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, -1, -1));
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Administrador", "Profesor", "Estudiante" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
-            }
-        });
-        pnlRoles.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 60, -1, -1));
-
-        tblCategorias1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        tblCategorias1.getTableHeader().setResizingAllowed(false);
-        tblCategorias1.getTableHeader().setReorderingAllowed(false);
-        tblCategorias1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tblCategorias1MouseClicked(evt);
-            }
-        });
-        jScrollPane2.setViewportView(tblCategorias1);
-
-        pnlRoles.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 820, 270));
-
-        btnRolLimpiar.setBackground(new java.awt.Color(59, 130, 246));
-        btnRolLimpiar.setFont(new java.awt.Font("Microsoft PhagsPa", 1, 14)); // NOI18N
-        btnRolLimpiar.setForeground(new java.awt.Color(255, 255, 255));
-        btnRolLimpiar.setText("LIMPIAR");
-        btnRolLimpiar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btnRolLimpiar.setMaximumSize(new java.awt.Dimension(100, 50));
-        btnRolLimpiar.setMinimumSize(new java.awt.Dimension(100, 50));
-        btnRolLimpiar.setPreferredSize(new java.awt.Dimension(120, 35));
-        btnRolLimpiar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRolLimpiarActionPerformed(evt);
-            }
-        });
-        pnlRoles.add(btnRolLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 260, -1, -1));
-
-        btnRolEliminar.setBackground(new java.awt.Color(220, 38, 38));
-        btnRolEliminar.setFont(new java.awt.Font("Microsoft PhagsPa", 1, 14)); // NOI18N
-        btnRolEliminar.setForeground(new java.awt.Color(255, 255, 255));
-        btnRolEliminar.setText("ELIMINAR");
-        btnRolEliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btnRolEliminar.setMaximumSize(new java.awt.Dimension(100, 50));
-        btnRolEliminar.setMinimumSize(new java.awt.Dimension(100, 50));
-        btnRolEliminar.setPreferredSize(new java.awt.Dimension(120, 35));
-        btnRolEliminar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRolEliminarActionPerformed(evt);
-            }
-        });
-        pnlRoles.add(btnRolEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 260, -1, -1));
-
-        btnRolModificar.setBackground(new java.awt.Color(217, 119, 6));
-        btnRolModificar.setFont(new java.awt.Font("Microsoft PhagsPa", 1, 14)); // NOI18N
-        btnRolModificar.setForeground(new java.awt.Color(255, 255, 255));
-        btnRolModificar.setText("MODIFICAR");
-        btnRolModificar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btnRolModificar.setMaximumSize(new java.awt.Dimension(100, 50));
-        btnRolModificar.setMinimumSize(new java.awt.Dimension(100, 50));
-        btnRolModificar.setPreferredSize(new java.awt.Dimension(120, 35));
-        btnRolModificar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRolModificarActionPerformed(evt);
-            }
-        });
-        pnlRoles.add(btnRolModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 260, -1, -1));
-
-        btnRolGuardar.setBackground(new java.awt.Color(68, 117, 245));
-        btnRolGuardar.setFont(new java.awt.Font("Microsoft PhagsPa", 1, 14)); // NOI18N
-        btnRolGuardar.setForeground(new java.awt.Color(255, 255, 255));
-        btnRolGuardar.setText("GUARDAR");
-        btnRolGuardar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btnRolGuardar.setMaximumSize(new java.awt.Dimension(100, 50));
-        btnRolGuardar.setMinimumSize(new java.awt.Dimension(100, 50));
-        btnRolGuardar.setPreferredSize(new java.awt.Dimension(120, 35));
-        btnRolGuardar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRolGuardarActionPerformed(evt);
-            }
-        });
-        pnlRoles.add(btnRolGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 260, -1, -1));
-
-        getContentPane().add(pnlRoles, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 0, 880, 600));
-
->>>>>>> efae1f65e82ae6330c8547aafcb05387526ba5a9
         pnlUsuarios.setBackground(new java.awt.Color(255, 255, 255));
         pnlUsuarios.setMaximumSize(new java.awt.Dimension(880, 600));
         pnlUsuarios.setMinimumSize(new java.awt.Dimension(880, 600));
@@ -749,7 +628,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
     private void pnlAutoresComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_pnlAutoresComponentShown
         AutoresCRUD autor = new AutoresCRUD();
-        tblAutor.setModel(autor.select());
+        tblAutores.setModel(autor.select());
     }//GEN-LAST:event_pnlAutoresComponentShown
 
     private void pnlCategoriasComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_pnlCategoriasComponentShown
@@ -839,52 +718,55 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAutorLimpiarActionPerformed
 
     private void btnAutorEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAutorEliminarActionPerformed
-        if (txtIdAutor.getText().equals("")) {
+        if (txtAutoresCodigo.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "Selecciona un Autor", "Alerta", JOptionPane.WARNING_MESSAGE);
         } else {
             AutoresCRUD autor = new AutoresCRUD();
-            if (autor.delete(Integer.parseInt(txtCategoriaCodigo.getText())) == 1) {
+            if (autor.delete(Integer.parseInt(txtAutoresCodigo.getText())) == 1) {
                 JOptionPane.showMessageDialog(null, "Autor eliminado correctamente", "Correcto", JOptionPane.INFORMATION_MESSAGE);
             } else {
                 JOptionPane.showMessageDialog(null, "Error al eliminar autor", "Error", JOptionPane.ERROR_MESSAGE);
             }
             this.limpiarAutoresCampos();
-            tblCategorias.setModel(autor.select());
+            tblAutores.setModel(autor.select());
         }
     }//GEN-LAST:event_btnAutorEliminarActionPerformed
 
     private void btnAutorGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAutorGuardarActionPerformed
         AutoresCRUD autor = new AutoresCRUD();
-        if (autor.insert(txtIdAutor.getText()) == 1) {
+        if (autor.insert(txtAutoresNombres.getText(), txtAutoresApellidos.getText(), txtAutoresFechaNacimiento.getText()) == 1) {
             JOptionPane.showMessageDialog(null, "Autor creado correctamente", "Correcto", JOptionPane.INFORMATION_MESSAGE);
         } else {
             JOptionPane.showMessageDialog(null, "Error al crear Autor", "Error", JOptionPane.ERROR_MESSAGE);
         }
         this.limpiarAutoresCampos();
-        tblAutor.setModel(autor.select());
+        tblAutores.setModel(autor.select());
     }//GEN-LAST:event_btnAutorGuardarActionPerformed
 
     private void btnAutorModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAutorModificarActionPerformed
-        if (txtIdAutor.getText().equals("")) {
+        if (txtAutoresCodigo.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "Selecciona un Autor", "Alerta", JOptionPane.WARNING_MESSAGE);
         } else {
             AutoresCRUD autor = new AutoresCRUD();
-            if (autor.update(txtCategoriaDescripcion.getText(), Integer.parseInt(txtCategoriaCodigo.getText())) == 1) {
+            if (autor.update(txtAutoresNombres.getText(), txtAutoresApellidos.getText(), txtAutoresFechaNacimiento.getText(), Integer.parseInt(txtAutoresCodigo.getText())) == 1) {
                 JOptionPane.showMessageDialog(null, "Autor modificado correctamente", "Correcto", JOptionPane.INFORMATION_MESSAGE);
             } else {
                 JOptionPane.showMessageDialog(null, "Error al modificar autor", "Error", JOptionPane.ERROR_MESSAGE);
             }
             this.limpiarAutoresCampos();
-            tblAutor.setModel(autor.select());
+            tblAutores.setModel(autor.select());
         }
     }//GEN-LAST:event_btnAutorModificarActionPerformed
 
-    private void tblAutorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblAutorMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tblAutorMouseClicked
+    private void tblAutoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblAutoresMouseClicked
+        JTable source = (JTable) evt.getSource();
+        int row = source.rowAtPoint(evt.getPoint());
+        txtAutoresCodigo.setText(source.getModel().getValueAt(row, 0) + "");
+        txtAutoresNombres.setText(source.getModel().getValueAt(row, 1) + "");
+        txtAutoresApellidos.setText(source.getModel().getValueAt(row, 2) + "");
+        txtAutoresFechaNacimiento.setText(source.getModel().getValueAt(row, 3) + "");
+    }//GEN-LAST:event_tblAutoresMouseClicked
 
-<<<<<<< HEAD
-=======
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox1ActionPerformed
@@ -909,7 +791,6 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnRolGuardarActionPerformed
 
->>>>>>> efae1f65e82ae6330c8547aafcb05387526ba5a9
     /**
      * @param args the command line arguments
      */
@@ -961,14 +842,6 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btnConfiguracionModificar;
     private javax.swing.JButton btnEjemplares;
     private javax.swing.JButton btnPrestamos;
-<<<<<<< HEAD
-=======
-    private javax.swing.JButton btnRolEliminar;
-    private javax.swing.JButton btnRolGuardar;
-    private javax.swing.JButton btnRolLimpiar;
-    private javax.swing.JButton btnRolModificar;
-    private javax.swing.JButton btnRoles;
->>>>>>> efae1f65e82ae6330c8547aafcb05387526ba5a9
     private javax.swing.JButton btnUsuarios;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -983,11 +856,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
-<<<<<<< HEAD
-=======
-    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
->>>>>>> efae1f65e82ae6330c8547aafcb05387526ba5a9
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -995,7 +864,6 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPanel1;
     private javax.swing.JPanel pnlAutores;
     private javax.swing.JPanel pnlBienvenida;
@@ -1004,39 +872,16 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel pnlEjemplares;
     private javax.swing.JPanel pnlPrestamos;
     private javax.swing.JPanel pnlUsuarios;
-    private javax.swing.JTable tblAutor;
+    private javax.swing.JTable tblAutores;
     private javax.swing.JTable tblCategorias;
-    private javax.swing.JTable tblCategorias1;
-    private javax.swing.JTextField txtApellidos;
-    private javax.swing.JTextField txtAutores1;
+    private javax.swing.JTextField txtAutoresApellidos;
+    private javax.swing.JTextField txtAutoresCodigo;
+    private javax.swing.JTextField txtAutoresFechaNacimiento;
+    private javax.swing.JTextField txtAutoresNombres;
     private javax.swing.JTextField txtCategoriaCodigo;
     private javax.swing.JTextField txtCategoriaDescripcion;
     private javax.swing.JTextField txtConfiguracionAlumnos;
     private javax.swing.JTextField txtConfiguracionMora;
     private javax.swing.JTextField txtConfiguracionProfesores;
-    private javax.swing.JTextField txtFechaNacimiento;
-    private javax.swing.JTextField txtIdAutor;
     // End of variables declaration//GEN-END:variables
-
-    private static class AutoresCRUD {
-
-        public AutoresCRUD() {
-        }
-
-        private TableModel select() {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        }
-
-        private int insert(String text) {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        }
-
-        private int update(String text, int parseInt) {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        }
-
-        private int delete(int parseInt) {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        }
-    }
 }
