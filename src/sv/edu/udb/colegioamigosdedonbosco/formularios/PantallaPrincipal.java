@@ -8,6 +8,7 @@ package sv.edu.udb.colegioamigosdedonbosco.formularios;
 import java.awt.Color;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
+import javax.swing.table.TableModel;
 import sv.edu.udb.colegioamigosdedonbosco.basededatos.CategoriasCRUD;
 import sv.edu.udb.colegioamigosdedonbosco.basededatos.ConfiguracionCRUD;
 
@@ -68,13 +69,15 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         txtApellidos = new javax.swing.JTextField();
         txtFechaNacimiento = new javax.swing.JTextField();
         jLabel20 = new javax.swing.JLabel();
-        txtAutores = new javax.swing.JTextField();
+        txtIdAutor = new javax.swing.JTextField();
         btnAutorLimpiar = new javax.swing.JButton();
         btnAutorEliminar = new javax.swing.JButton();
         btnAutorGuardar = new javax.swing.JButton();
         btnAutorModificar = new javax.swing.JButton();
         jScrollPanel1 = new javax.swing.JScrollPane();
         tblAutor = new javax.swing.JTable();
+        jLabel22 = new javax.swing.JLabel();
+        txtAutores1 = new javax.swing.JTextField();
         pnlPrestamos = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         pnlEjemplares = new javax.swing.JPanel();
@@ -270,26 +273,27 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         pnlAutores.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
 
         jLabel18.setFont(new java.awt.Font("Microsoft PhagsPa", 0, 14)); // NOI18N
-        jLabel18.setText("Nombres:");
-        pnlAutores.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, -1, -1));
+        jLabel18.setText("Código:");
+        pnlAutores.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, -1, -1));
 
         jLabel19.setFont(new java.awt.Font("Microsoft PhagsPa", 0, 14)); // NOI18N
         jLabel19.setText("Apellidos:");
-        pnlAutores.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 70, -1, -1));
+        pnlAutores.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 140, -1, -1));
 
         txtApellidos.setFont(new java.awt.Font("Microsoft PhagsPa", 0, 14)); // NOI18N
-        pnlAutores.add(txtApellidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 110, 290, 40));
+        pnlAutores.add(txtApellidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 180, 290, 40));
         txtApellidos.getAccessibleContext().setAccessibleName("");
 
         txtFechaNacimiento.setFont(new java.awt.Font("Microsoft PhagsPa", 0, 14)); // NOI18N
-        pnlAutores.add(txtFechaNacimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 110, 200, 40));
+        pnlAutores.add(txtFechaNacimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 180, 200, 40));
 
         jLabel20.setFont(new java.awt.Font("Microsoft PhagsPa", 0, 14)); // NOI18N
         jLabel20.setText("Fecha de Nacimiento:");
-        pnlAutores.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 70, -1, -1));
+        pnlAutores.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 140, -1, -1));
 
-        txtAutores.setFont(new java.awt.Font("Microsoft PhagsPa", 0, 14)); // NOI18N
-        pnlAutores.add(txtAutores, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 200, 40));
+        txtIdAutor.setBackground(new java.awt.Color(204, 204, 204));
+        txtIdAutor.setFont(new java.awt.Font("Microsoft PhagsPa", 0, 14)); // NOI18N
+        pnlAutores.add(txtIdAutor, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 70, 200, 40));
 
         btnAutorLimpiar.setBackground(new java.awt.Color(59, 130, 246));
         btnAutorLimpiar.setFont(new java.awt.Font("Microsoft PhagsPa", 1, 14)); // NOI18N
@@ -372,6 +376,13 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jScrollPanel1.setViewportView(tblAutor);
 
         pnlAutores.add(jScrollPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 820, 270));
+
+        jLabel22.setFont(new java.awt.Font("Microsoft PhagsPa", 0, 14)); // NOI18N
+        jLabel22.setText("Nombres:");
+        pnlAutores.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, -1, -1));
+
+        txtAutores1.setFont(new java.awt.Font("Microsoft PhagsPa", 0, 14)); // NOI18N
+        pnlAutores.add(txtAutores1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 200, 40));
 
         getContentPane().add(pnlAutores, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 0, 880, 600));
 
@@ -741,7 +752,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAutoresActionPerformed
 
     private void pnlAutoresComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_pnlAutoresComponentShown
-        // TODO add your handling code here:
+        AutoresCRUD autor = new AutoresCRUD();
+        tblAutor.setModel(autor.select());
     }//GEN-LAST:event_pnlAutoresComponentShown
 
     private void pnlCategoriasComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_pnlCategoriasComponentShown
@@ -831,22 +843,43 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAutorLimpiarActionPerformed
 
     private void btnAutorEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAutorEliminarActionPerformed
-        // TODO add your handling code here:
+        if (txtIdAutor.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Selecciona un Autor", "Alerta", JOptionPane.WARNING_MESSAGE);
+        } else {
+            AutoresCRUD autor = new AutoresCRUD();
+            if (autor.delete(Integer.parseInt(txtCategoriaCodigo.getText())) == 1) {
+                JOptionPane.showMessageDialog(null, "Autor eliminado correctamente", "Correcto", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(null, "Error al eliminar autor", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+            
+            tblCategorias.setModel(autor.select());
+        }
     }//GEN-LAST:event_btnAutorEliminarActionPerformed
 
     private void btnAutorGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAutorGuardarActionPerformed
         AutoresCRUD autor = new AutoresCRUD();
-        if (autor.insert(txtCategoriaDescripcion.getText()) == 1) {
+        if (autor.insert(txtIdAutor.getText()) == 1) {
             JOptionPane.showMessageDialog(null, "Autor creado correctamente", "Correcto", JOptionPane.INFORMATION_MESSAGE);
         } else {
             JOptionPane.showMessageDialog(null, "Error al crear Autor", "Error", JOptionPane.ERROR_MESSAGE);
         }
-        this.limpiarCategoriaCampos();
-        tblCategorias.setModel(autor.select());
+        tblAutor.setModel(autor.select());
     }//GEN-LAST:event_btnAutorGuardarActionPerformed
 
     private void btnAutorModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAutorModificarActionPerformed
-        // TODO add your handling code here:
+        if (txtIdAutor.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Selecciona un Autor", "Alerta", JOptionPane.WARNING_MESSAGE);
+        } else {
+            AutoresCRUD autor = new AutoresCRUD();
+            if (autor.update(txtCategoriaDescripcion.getText(), Integer.parseInt(txtCategoriaCodigo.getText())) == 1) {
+                JOptionPane.showMessageDialog(null, "Autor modificado correctamente", "Correcto", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(null, "Error al modificar autor", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+            
+            tblAutor.setModel(autor.select());
+        }
     }//GEN-LAST:event_btnAutorModificarActionPerformed
 
     private void tblAutorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblAutorMouseClicked
@@ -949,6 +982,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -971,12 +1005,35 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JTable tblCategorias;
     private javax.swing.JTable tblCategorias1;
     private javax.swing.JTextField txtApellidos;
-    private javax.swing.JTextField txtAutores;
+    private javax.swing.JTextField txtAutores1;
     private javax.swing.JTextField txtCategoriaCodigo;
     private javax.swing.JTextField txtCategoriaDescripcion;
     private javax.swing.JTextField txtConfiguracionAlumnos;
     private javax.swing.JTextField txtConfiguracionMora;
     private javax.swing.JTextField txtConfiguracionProfesores;
     private javax.swing.JTextField txtFechaNacimiento;
+    private javax.swing.JTextField txtIdAutor;
     // End of variables declaration//GEN-END:variables
+
+    private static class AutoresCRUD {
+
+        public AutoresCRUD() {
+        }
+
+        private TableModel select() {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+
+        private int insert(String text) {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+
+        private int update(String text, int parseInt) {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+
+        private int delete(int parseInt) {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+    }
 }
