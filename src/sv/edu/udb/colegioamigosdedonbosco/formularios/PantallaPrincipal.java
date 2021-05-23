@@ -34,11 +34,19 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         pnlAutores.setVisible(panel.equals("autores"));
     }
 
+    private void limpiarAutoresCampos() {
+        txtAutores1.setText("");
+        txtIdAutor.setText("");
+        txtApellidos.setText("");
+        txtFechaNacimiento.setText("");
+    }
+
     private void limpiarCategoriaCampos() {
         txtCategoriaCodigo.setText("");
         txtCategoriaDescripcion.setText("");
     }
-
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -839,7 +847,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_pnlConfiguracionComponentShown
 
     private void btnAutorLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAutorLimpiarActionPerformed
-        // TODO add your handling code here:
+        this.limpiarAutoresCampos();
     }//GEN-LAST:event_btnAutorLimpiarActionPerformed
 
     private void btnAutorEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAutorEliminarActionPerformed
@@ -852,7 +860,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             } else {
                 JOptionPane.showMessageDialog(null, "Error al eliminar autor", "Error", JOptionPane.ERROR_MESSAGE);
             }
-            
+            this.limpiarAutoresCampos();
             tblCategorias.setModel(autor.select());
         }
     }//GEN-LAST:event_btnAutorEliminarActionPerformed
@@ -864,6 +872,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(null, "Error al crear Autor", "Error", JOptionPane.ERROR_MESSAGE);
         }
+        this.limpiarAutoresCampos();
         tblAutor.setModel(autor.select());
     }//GEN-LAST:event_btnAutorGuardarActionPerformed
 
@@ -877,7 +886,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             } else {
                 JOptionPane.showMessageDialog(null, "Error al modificar autor", "Error", JOptionPane.ERROR_MESSAGE);
             }
-            
+            this.limpiarAutoresCampos();
             tblAutor.setModel(autor.select());
         }
     }//GEN-LAST:event_btnAutorModificarActionPerformed
