@@ -6,10 +6,10 @@
 package sv.edu.udb.colegioamigosdedonbosco.formularios;
 
 import java.awt.Font;
-import java.awt.Image;
 import java.awt.font.TextAttribute;
 import java.util.Map;
-import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+import sv.edu.udb.colegioamigosdedonbosco.basededatos.UsuariosCRUD;
 
 public class IniciarSesion extends javax.swing.JFrame {
 
@@ -88,9 +88,9 @@ public class IniciarSesion extends javax.swing.JFrame {
         btnIngresar.setMaximumSize(new java.awt.Dimension(100, 50));
         btnIngresar.setMinimumSize(new java.awt.Dimension(100, 50));
         btnIngresar.setPreferredSize(new java.awt.Dimension(100, 50));
-        btnIngresar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnIngresarMouseClicked(evt);
+        btnIngresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnIngresarActionPerformed(evt);
             }
         });
 
@@ -177,10 +177,17 @@ public class IniciarSesion extends javax.swing.JFrame {
         lblOlvidasteContrasena.setFont(font.deriveFont(attributes));
     }//GEN-LAST:event_lblOlvidasteContrasenaMouseExited
 
-    private void btnIngresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnIngresarMouseClicked
-        this.dispose();
-        new PantallaPrincipal().setVisible(true);
-    }//GEN-LAST:event_btnIngresarMouseClicked
+    private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
+        UsuariosCRUD usuarios = new UsuariosCRUD();
+
+        if (usuarios.login(txtUsuario.getText(), txtContrasena.getText())) {
+            JOptionPane.showMessageDialog(null, "Credenciales correctas", "Bienvenido", JOptionPane.INFORMATION_MESSAGE);
+            this.dispose();
+            new PantallaPrincipal().setVisible(true);
+        } else {
+            JOptionPane.showMessageDialog(null, "Credenciales incorrectas", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_btnIngresarActionPerformed
 
     /**
      * @param args the command line arguments

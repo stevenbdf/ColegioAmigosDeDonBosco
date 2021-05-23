@@ -27,7 +27,6 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         pnlEjemplares.setVisible(panel.equals("ejemplares"));
         pnlCategorias.setVisible(panel.equals("categorias"));
         pnlUsuarios.setVisible(panel.equals("usuarios"));
-        pnlRoles.setVisible(panel.equals("roles"));
         pnlConfiguracion.setVisible(panel.equals("configuracion"));
         pnlBienvenida.setVisible(panel.equals("bienvenida"));
         pnlAutores.setVisible(panel.equals("autores"));
@@ -50,7 +49,6 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         btnAutores = new javax.swing.JButton();
         btnCerrarSesion = new javax.swing.JButton();
         btnCategorias = new javax.swing.JButton();
-        btnRoles = new javax.swing.JButton();
         btnConfiguracion = new javax.swing.JButton();
         btnPrestamos = new javax.swing.JButton();
         btnUsuarios = new javax.swing.JButton();
@@ -88,10 +86,6 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         txtConfiguracionMora = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
         btnConfiguracionModificar = new javax.swing.JButton();
-        pnlRoles = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
         pnlUsuarios = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         pnlCategorias = new javax.swing.JPanel();
@@ -140,7 +134,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 btnCerrarSesionActionPerformed(evt);
             }
         });
-        getContentPane().add(btnCerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 430, 120, 50));
+        getContentPane().add(btnCerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 380, 120, 50));
 
         btnCategorias.setBackground(new java.awt.Color(55, 60, 86));
         btnCategorias.setFont(new java.awt.Font("Microsoft PhagsPa", 0, 11)); // NOI18N
@@ -154,18 +148,6 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         });
         getContentPane().add(btnCategorias, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 120, 50));
 
-        btnRoles.setBackground(new java.awt.Color(55, 60, 86));
-        btnRoles.setFont(new java.awt.Font("Microsoft PhagsPa", 0, 11)); // NOI18N
-        btnRoles.setForeground(new java.awt.Color(255, 255, 255));
-        btnRoles.setText("ROLES");
-        btnRoles.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btnRoles.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRolesActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnRoles, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 330, 120, 50));
-
         btnConfiguracion.setBackground(new java.awt.Color(55, 60, 86));
         btnConfiguracion.setFont(new java.awt.Font("Microsoft PhagsPa", 0, 11)); // NOI18N
         btnConfiguracion.setForeground(new java.awt.Color(255, 255, 255));
@@ -176,7 +158,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 btnConfiguracionActionPerformed(evt);
             }
         });
-        getContentPane().add(btnConfiguracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 380, 120, 50));
+        getContentPane().add(btnConfiguracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 330, 120, 50));
 
         btnPrestamos.setBackground(new java.awt.Color(55, 60, 86));
         btnPrestamos.setFont(new java.awt.Font("Microsoft PhagsPa", 0, 11)); // NOI18N
@@ -452,30 +434,6 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         getContentPane().add(pnlConfiguracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 0, 880, 600));
 
-        pnlRoles.setBackground(new java.awt.Color(255, 255, 255));
-        pnlRoles.setMaximumSize(new java.awt.Dimension(880, 600));
-        pnlRoles.setMinimumSize(new java.awt.Dimension(880, 600));
-        pnlRoles.setPreferredSize(new java.awt.Dimension(880, 600));
-        pnlRoles.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel6.setFont(new java.awt.Font("Microsoft PhagsPa", 1, 18)); // NOI18N
-        jLabel6.setText("Roles");
-        pnlRoles.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
-
-        jLabel21.setFont(new java.awt.Font("Microsoft PhagsPa", 0, 14)); // NOI18N
-        jLabel21.setText("Seleccionar Rol:");
-        pnlRoles.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, -1, -1));
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Administrador", "Profesor", "Estudiante" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
-            }
-        });
-        pnlRoles.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 60, -1, -1));
-
-        getContentPane().add(pnlRoles, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 0, 880, 600));
-
         pnlUsuarios.setBackground(new java.awt.Color(255, 255, 255));
         pnlUsuarios.setMaximumSize(new java.awt.Dimension(880, 600));
         pnlUsuarios.setMinimumSize(new java.awt.Dimension(880, 600));
@@ -628,10 +586,6 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         this.mostrarPanel("usuarios");
     }//GEN-LAST:event_btnUsuariosActionPerformed
 
-    private void btnRolesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRolesActionPerformed
-        this.mostrarPanel("roles");
-    }//GEN-LAST:event_btnRolesActionPerformed
-
     private void btnConfiguracionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfiguracionActionPerformed
         this.mostrarPanel("configuracion");
     }//GEN-LAST:event_btnConfiguracionActionPerformed
@@ -758,10 +712,6 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tblAutorMouseClicked
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -813,9 +763,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btnConfiguracionModificar;
     private javax.swing.JButton btnEjemplares;
     private javax.swing.JButton btnPrestamos;
-    private javax.swing.JButton btnRoles;
     private javax.swing.JButton btnUsuarios;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -829,11 +777,9 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
@@ -845,7 +791,6 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel pnlConfiguracion;
     private javax.swing.JPanel pnlEjemplares;
     private javax.swing.JPanel pnlPrestamos;
-    private javax.swing.JPanel pnlRoles;
     private javax.swing.JPanel pnlUsuarios;
     private javax.swing.JTable tblAutor;
     private javax.swing.JTable tblCategorias;
